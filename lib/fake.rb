@@ -1,14 +1,14 @@
 module Fake
+	def self.create(args={})
+		fake = Fake::Fake.new
+		args.each {|k, v| fake.stub!(k, v) }
+		fake
+	end
+  
   class Fake < BasicObject
 
   	def initialize
   		@hash = {}
-  	end
-
-  	def self.create(args={})
-  		fake = ::Fake.new
-  		args.each {|k, v| fake.stub!(k, v) }
-  		fake
   	end
 
   	def stub!(m, v, *args)
