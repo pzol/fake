@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["pz@anixe.pl"]
   s.homepage    = "http://pzol.agirei.com/fake"
   s.summary     = %q{Fake helps creating fakes or in other word stubs}
-  s.description = %q{TODO: Write a gem description}
+  s.description = %q{}
 
   s.rubyforge_project = "fake"
 
