@@ -13,10 +13,11 @@ module Fake
 
   	def stub!(m, v, *args)
   		@hash[__key__(m, args)] = v
+  		self
   	end
 
   	def method_missing(m, *args)
-  		@hash[__key__(m, args)] or raise_no_metho_error(m)
+  		@hash[__key__(m, args)] or __raise_no_method_error__(m)
   	end
 
   	def inspect
@@ -28,7 +29,7 @@ module Fake
   			[m, *args]
   		end
 
-  		def raise_no_metho_error(m)
+  		def __raise_no_method_error__(m)
   			::Kernel.raise(::NoMethodError, "undefined method '#{m}'")
   		end
 
